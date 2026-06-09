@@ -61,6 +61,11 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
+# Custom Django Allauth configuration (Overwrites default settings)
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
+ACCOUNT_LOGIN_BY_CODE_SUPPORTS_RESEND = True
+ACCOUNT_LOGIN_METHODS = ['email', 'username']
+
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
         "APP": {

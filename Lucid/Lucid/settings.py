@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+    # Broswer reload (NOT FOR PRODUCTION)
+    "django_browser_reload",
+
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -67,6 +70,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 
     "allauth.account.middleware.AccountMiddleware",
+
+    "django_browser_reload.middleware.BrowserReloadMiddleware", # NOT FOR PRODUCTION
 ]
 
 # Custom Django Allauth configuration (Overwrites default settings)
